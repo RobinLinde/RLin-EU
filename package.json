@@ -1,0 +1,19 @@
+{
+  "name": "rlin-eu",
+  "description": "This repo contains the files for the new version of [RLin.eu](https://rlin.eu/)",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "bootstrap": "^5.0.0-beta2",
+    "leaflet": "^1.7.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2"
+  },
+  "author": "Robin van der Linde"
+}
