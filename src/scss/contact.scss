@@ -1,4 +1,6 @@
-@import "./style.scss";
+@import "./includes/style.scss";
+
+@import "./includes/list-group.scss";
 
 $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
