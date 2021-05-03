@@ -12,7 +12,7 @@
     "bootstrap": "^5.0.0-beta2"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "@parcel/transformer-sass": "^2.0.0-nightly.651",
     "parcel": "^2.0.0-beta.2"
   },
   "author": "Robin van der Linde"
