@@ -1,1 +1,7 @@
 @import "./includes/style.scss";
+
+@include media-breakpoint-up(lg) {
+  #chart {
+    max-width: 800px;
+  }
+}
