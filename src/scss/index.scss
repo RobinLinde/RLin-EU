@@ -1,1 +1,15 @@
 @import "./includes/style.scss";
+
+.tab-nav-link.nav-link.active {
+  color: #090c10;
+  background-color: white;
+}
+
+.tab-nav-link.nav-link {
+  color: white;
+  background-color: #090c10;
+}
+
+#hdyc-frame {
+  background-color: darkslategray;
+}
