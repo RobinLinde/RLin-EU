@@ -55,81 +55,18 @@
           Shown beneath is some of my latest activity.
         </p>
       </div>
+      <div class="container"></div>
       <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              class="tab-nav-link nav-link active"
-              id="home-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#home"
-              type="button"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
-              Home
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="tab-nav-link nav-link"
-              id="profile-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-            >
-              Profile
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="tab-nav-link nav-link"
-              id="contact-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#contact"
-              type="button"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false"
-            >
-              Contact
-            </button>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          >
-            <iframe src="https://osm.rlin.eu/ChangesetMap/" style="border: none; min-height: 500px; width: 100%;">
-          </div>
-          <div
-            class="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          >
-            <iframe
-              src="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
-              style="border: none; min-height: 500px; width: 100%"
-              id="hdyc-frame"
-            ></iframe>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="contact"
-            role="tabpanel"
-            aria-labelledby="contact-tab"
-          >
-            Contact content
-          </div>
-        </div>
+        <p>
+          For more information on my OSM contribution, have a look at my
+          <a href="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
+            >HDYC profile</a
+          >.
+        </p>
+        <iframe
+          src="https://osm.rlin.eu/ChangesetMap/"
+          style="border: none; min-height: 500px; width: 100%"
+        ></iframe>
       </div>
     </main>
     <script src="./ts/index.ts"></script>
