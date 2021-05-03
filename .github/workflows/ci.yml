@@ -1,6 +1,14 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    paths_ignore:
+      - "**.md"
+      - ".vscode/"
+  pull_request:
+    paths_ignore:
+      - "**.md"
+      - ".vscode/"
 
 jobs:
   build:
