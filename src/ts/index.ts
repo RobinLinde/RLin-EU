@@ -1,2 +1,1 @@
-import "../../node_modules/bootstrap/js/dist/collapse";
-import "../../node_modules/bootstrap/js/dist/tab";
+import "bootstrap/js/dist/collapse";
