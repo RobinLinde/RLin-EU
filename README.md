@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/RobinLinde/RLin-EU/actions/workflows/ci.yml/badge.svg)](https://github.com/RobinLinde/RLin-EU/actions/workflows/ci.yml)
 [![Deploy](https://github.com/RobinLinde/RLin-EU/actions/workflows/deploy.yml/badge.svg)](https://github.com/RobinLinde/RLin-EU/actions/workflows/deploy.yml)
+[![wakatime](https://wakatime.com/badge/github/RobinLinde/RLin-EU.svg)](https://wakatime.com/badge/github/RobinLinde/RLin-EU)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This repo contains the files for the new version of [RLin.eu](https://rlin.eu/)
