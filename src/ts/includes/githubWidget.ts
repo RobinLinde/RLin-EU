@@ -24,8 +24,6 @@ export function githubWidget(
     element.appendChild(ul);
 
     for (var i = 0; i < requestData.length; i++) {
-      console.log(requestData[i]);
-
       var li = document.createElement("li");
       li.className = "list-group-item";
 
@@ -258,8 +256,6 @@ export function githubWidget(
             requestData[i]["repo"]["name"] +
             "</a>";
       }
-
-      console.log(li.innerText);
       ul.appendChild(li);
     }
   };
