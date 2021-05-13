@@ -26,5 +26,4 @@ osmWidget(osmWidgetDiv, osmUser, 10);
 
 const githubWidgetDiv = document.getElementById("githubActivity");
 const githubUser = "robinlinde";
-const githubApiKey = "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";
-githubWidget(githubWidgetDiv, githubUser, 10, githubApiKey);
+githubWidget(githubWidgetDiv, githubUser, 10);

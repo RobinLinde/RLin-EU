@@ -1,8 +1,7 @@
 export function githubWidget(
   element: HTMLElement,
   user: string,
-  amount: Number,
-  apiKey: string
+  amount: Number
 ) {
   element.innerHTML = "";
   const requestURL =
@@ -14,7 +13,6 @@ export function githubWidget(
 
   request.open("GET", requestURL);
   request.setRequestHeader("Accept", "application/vnd.github.v3+json");
-  request.setRequestHeader("Authorization", "token " + apiKey);
   request.responseType = "json";
   request.send();
 
