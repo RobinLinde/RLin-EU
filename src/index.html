@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -10,9 +10,9 @@
 
     <title>RLin.eu - Home</title>
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">RLin.eu</a>
           <button
@@ -27,7 +27,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -56,27 +56,56 @@
         </p>
       </div>
       <div class="container">
-        <codersrank-activity
-          username="robinlinde"
-          labels="true"
-          legend="true"
-          tooltip="true"
-          branding="false"
-        ></codersrank-activity>
-      </div>
-      <div class="container">
-        <p>
-          For more information on my OSM contributions, have a look at my
-          <a href="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
-            >HDYC profile</a
-          >.
-        </p>
-        <iframe
-          src="https://osm.rlin.eu/ChangesetMap/"
-          style="border: none; min-height: 500px; width: 100%"
-        ></iframe>
+        <div class="card-group" id="activity">
+          <div class="card bg-dark text-white" id="gitWidget">
+            <div class="card-body">
+              <h5 class="card-title">Git Activity</h5>
+              <codersrank-activity
+                username="robinlinde"
+                labels="true"
+                legend="true"
+                tooltip="true"
+                branding="false"
+              ></codersrank-activity>
+              <div id="githubActivity"></div>
+            </div>
+          </div>
+          <div class="card bg-dark text-white" id="tvWidget"></div>
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+              <h5 class="card-title">OSM Activity</h5>
+              <p class="card-text">
+                For more information on my OSM contributions, have a look at my
+                <a href="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
+                  >HDYC profile</a
+                >.
+              </p>
+              <div id="osmChangesets"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
+    <footer class="footer mt-auto py-3 bg-dark">
+      <div class="container" id="footer-content">
+        <span class="text-muted">
+          &copy; Robin van der Linde, the source code of this site is available
+          on
+          <a href="http://github.com/RobinLinde/RLin-EU" target="_blank"
+            >GitHub</a
+          >. Watching data provided by
+          <a href="https://trakt.tv/" target="_blank"
+            ><img src="./assets/trakt-wide-red-white.svg" height="20px"
+          /></a>
+          , posters provided by
+          <a href="https://themoviedb.org/" target="_blank"
+            ><img
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+              height="10px"
+          /></a>
+        </span>
+      </div>
+    </footer>
     <script src="./ts/index.ts"></script>
   </body>
 </html>
