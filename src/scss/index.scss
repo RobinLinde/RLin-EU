@@ -1,4 +1,5 @@
 @import "./includes/style.scss";
+@import "./includes/list-group.scss";
 
 .tab-nav-link.nav-link.active {
   color: #090c10;
@@ -16,4 +17,8 @@
 
 #gitWidget {
   min-width: 800px;
+}
+
+.list-group-item {
+  white-space: pre-line;
 }
