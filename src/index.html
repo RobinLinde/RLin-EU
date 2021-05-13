@@ -55,23 +55,36 @@
           Shown beneath is some of my latest activity.
         </p>
       </div>
-      <div class="container" id="tvWidget"></div>
       <div class="container">
-        <codersrank-activity
-          username="robinlinde"
-          labels="true"
-          legend="true"
-          tooltip="true"
-          branding="false"
-        ></codersrank-activity>
+        <div class="card-group" id="activity">
+          <div class="card bg-dark text-white" id="gitWidget">
+            <div class="card-body">
+              <h5 class="card-title">Git Activity</h5>
+              <codersrank-activity
+                username="robinlinde"
+                labels="true"
+                legend="true"
+                tooltip="true"
+                branding="false"
+              ></codersrank-activity>
+            </div>
+          </div>
+          <div class="card bg-dark text-white" id="tvWidget"></div>
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+              <h5 class="card-title">OSM Activity</h5>
+              <p class="card-text">
+                For more information on my OSM contributions, have a look at my
+                <a href="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
+                  >HDYC profile</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="container">
-        <p>
-          For more information on my OSM contributions, have a look at my
-          <a href="https://hdyc.neis-one.org/?Robin%20van%20der%20Linde"
-            >HDYC profile</a
-          >.
-        </p>
+        <p></p>
         <iframe
           src="https://osm.rlin.eu/ChangesetMap/"
           style="border: none; min-height: 500px; width: 100%"
@@ -80,7 +93,18 @@
     </main>
     <footer class="footer mt-auto py-3 bg-dark">
       <div class="container" id="footer-content">
-        &copy; Robin van der Linde
+        <span class="text-muted">
+          &copy; Robin van der Linde, the source code of this site is available
+          on
+          <a href="http://github.com/RobinLinde/RLin-EU" target="_blank"
+            >GitHub</a
+          >. TV/Movie posters provided by
+          <a href="https://themoviedb.org/" target="_blank"
+            ><img
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+              height="10px"
+          /></a>
+        </span>
       </div>
     </footer>
     <script src="./ts/index.ts"></script>
