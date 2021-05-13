@@ -22,7 +22,7 @@ function updateWidget() {
 
 const osmWidgetDiv = document.getElementById("osmChangesets");
 const osmUser = "Robin van der Linde";
-osmWidget(osmWidgetDiv, osmUser, 10);
+osmWidget(osmWidgetDiv, osmUser, 20);
 
 const githubWidgetDiv = document.getElementById("githubActivity");
 const githubUser = "robinlinde";
