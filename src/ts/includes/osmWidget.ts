@@ -3,15 +3,19 @@ var parseString = require("xml2js").parseString;
 export function osmWidget(element: HTMLElement, user: string, amount: Number) {
   element.innerHTML = "";
   const requestURL =
-    "https://openstreetmap.org/api/0.6/changesets?display_name=" +
+    "https://api.allorigins.win/get?url=" +
+    encodeURIComponent(
+      "https://openstreetmap.org/api/0.6/changesets?display_name="
+    ) +
     encodeURIComponent(user);
   const request = new XMLHttpRequest();
 
   request.open("GET", requestURL);
   request.send();
+  request.responseType = "json";
 
   request.onload = function () {
-    const requestXml = request.response;
+    const requestXml = request.response.contents;
     parseString(requestXml, function (err, res) {
       if (!err) {
         const changesets = res.osm.changeset;
