@@ -32,35 +32,189 @@ export function githubWidget(
       li.className = "list-group-item";
 
       switch (requestData[i]["type"]) {
+        case "CommitCommentEvent":
+          li.innerHTML =
+            'Commented on <a href="' +
+            requestData[i]["payload"]["comment"]["html_url"] +
+            '" target="_blank">commmit</a> in <a href="' +
+            requestData[i]["repo"]["url"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
         case "CreateEvent":
-          li.innerText =
-            "Created branch " +
+          li.innerHTML =
+            "Created " +
+            requestData[i]["payload"]["ref_type"] +
+            " " +
             requestData[i]["payload"]["ref"] +
-            " in " +
-            requestData[i]["repo"]["name"];
+            ' in <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
+        case "DeleteEvent":
+          li.innerHTML =
+            "Deleted " +
+            requestData[i]["payload"]["ref_type"] +
+            " " +
+            requestData[i]["payload"]["ref"] +
+            ' in <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
+        case "ForkEvent":
+          li.innerHTML =
+            'Created a <a href="' +
+            requestData[i]["payload"]["forkee"]["html_url"] +
+            '">fork</a> of <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
+        case "GollumEvent":
+          // TODO: implement
+          break;
+
+        case "IssueCommentEvent":
+          switch (requestData[i]["payload"]["action"]) {
+            case "created":
+              li.innerHTML =
+                'Commented on issue <a href="' +
+                requestData[i]["payload"]["issue"]["html_url"] +
+                '" target="_blank">' +
+                requestData[i]["payload"]["issue"]["title"] +
+                '</a> in <a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                "</a>";
+              break;
+          }
+          break;
+
+        case "IssueEvent":
+          switch (requestData[i]["payload"]["action"]) {
+            case "opened":
+              li.innerHTML =
+                'Opened issue <a href="' +
+                requestData[i]["payload"]["issue"]["html_url"] +
+                '" target="_blank">' +
+                requestData[i]["payload"]["issue"]["title"] +
+                '</a> in <a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                "</a>";
+              break;
+            case "closed":
+              li.innerHTML =
+                'Closed issue <a href="' +
+                requestData[i]["payload"]["issue"]["html_url"] +
+                '" target="_blank">' +
+                requestData[i]["payload"]["issue"]["title"] +
+                '</a> in <a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                "</a>";
+              break;
+          }
+          break;
+
+        case "PublicEvent":
+          li.innerHTML =
+            'Made <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a> public";
           break;
 
         case "PullRequestEvent":
           switch (requestData[i]["payload"]["action"]) {
             case "closed":
-              li.innerText =
-                "Closed pull request in " +
+              li.innerHTML =
+                'Closed pull request in <a href="https://github.com/' +
                 requestData[i]["repo"]["name"] +
-                "\r\n" +
-                requestData[i]["payload"]["pull_request"]["title"];
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                '</a><br><a href="' +
+                requestData[i]["payload"]["pull_request"]["html_url"] +
+                '" target="_blank">' +
+                requestData[i]["payload"]["pull_request"]["title"] +
+                "</a>";
               break;
             case "opened":
-              li.innerText =
-                'Opened pull request "' +
+              li.innerHTML =
+                'Opened pull request in <a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                '</a><br><a href="' +
+                requestData[i]["payload"]["pull_request"]["html_url"] +
+                '" target="_blank">' +
                 requestData[i]["payload"]["pull_request"]["title"] +
-                '" in ' +
-                requestData[i]["repo"]["name"];
+                "</a>";
+              break;
+            case "reopened":
+              li.innerHTML =
+                'Reopened pull request in <a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                '" target="_blank">' +
+                requestData[i]["repo"]["name"] +
+                '</a><br><a href="' +
+                requestData[i]["payload"]["pull_request"]["html_url"] +
+                '" target="_blank">' +
+                requestData[i]["payload"]["pull_request"]["title"] +
+                "</a>";
               break;
           }
           break;
 
+        case "PullRequestReviewEvent":
+          li.innerHTML =
+            'Left a <a href="' +
+            requestData[i]["payload"]["review"]["html_url"] +
+            '" target="_blank">review</a> on <a href="' +
+            requestData[i]["payload"]["pull_request"]["html_url"] +
+            '" target="_blank">pull request</a>"' +
+            requestData[i]["payload"]["pull_request"]["title"] +
+            '" in <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
+        case "PullRequestReviewCommentEvent":
+          li.innerHTML =
+            'Left a <a href="' +
+            requestData[i]["payload"]["comment"]["html_url"] +
+            '" target="_blank">comment</a> on a review of pull request "' +
+            requestData[i]["payload"]["pull_request"]["title"] +
+            '" in <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
         case "PushEvent":
-          li.textContent = "Pushed to " + requestData[i]["repo"]["name"];
+          li.innerHTML =
+            'Pushed to <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
           for (
             var j = 0;
             j < requestData[i]["payload"]["commits"].length;
@@ -70,15 +224,41 @@ export function githubWidget(
               requestData[i]["payload"]["commits"][j]["author"]["name"] !=
               "dependabot[bot]"
             ) {
-              li.textContent +=
-                "\r\n" +
+              li.innerHTML +=
+                '<br><a href="https://github.com/' +
+                requestData[i]["repo"]["name"] +
+                "/commit/" +
+                requestData[i]["payload"]["commits"][j]["sha"] +
+                '" target="_blank">' +
                 requestData[i]["payload"]["commits"][j]["message"].replace(
                   "\n\n",
-                  "\r\n"
-                );
+                  "<br>"
+                ) +
+                "</a>";
             }
           }
           break;
+
+        case "ReleaseEvent":
+          li.innerHTML =
+            'Released <a href="' +
+            requestData[i]["payload"]["release"]["html_url"] +
+            '" target="_blank">' +
+            requestData[i]["payload"]["release"]["name"] +
+            '</a> of <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
+          break;
+
+        case "WatchEvent":
+          li.innerHTML =
+            'Is now watching <a href="https://github.com/' +
+            requestData[i]["repo"]["name"] +
+            '" target="_blank">' +
+            requestData[i]["repo"]["name"] +
+            "</a>";
       }
 
       console.log(li.innerText);
