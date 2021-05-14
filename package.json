@@ -9,7 +9,7 @@
   "dependencies": {
     "@codersrank/activity": "^0.9.14",
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "bootstrap": "^5.0.0",
+    "bootstrap": "^5.0.1",
     "xml2js": "0.4.23"
   },
   "devDependencies": {
