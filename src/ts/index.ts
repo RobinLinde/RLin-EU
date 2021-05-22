@@ -1,8 +1,5 @@
 import "bootstrap/js/dist/collapse";
 
-import CodersRankActivity from "@codersrank/activity";
-window.customElements.define("codersrank-activity", CodersRankActivity);
-
 import { tvWidget } from "./includes/tvWidget";
 import { osmWidget } from "./includes/osmWidget";
 import { githubWidget } from "./includes/githubWidget";
@@ -26,4 +23,4 @@ osmWidget(osmWidgetDiv, osmUser, 20);
 
 const githubWidgetDiv = document.getElementById("githubActivity");
 const githubUser = "robinlinde";
-githubWidget(githubWidgetDiv, githubUser, 10);
+githubWidget(githubWidgetDiv, githubUser, 15);
