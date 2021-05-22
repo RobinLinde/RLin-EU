@@ -97,7 +97,7 @@ export function githubWidget(
           }
           break;
 
-        case "IssueEvent":
+        case "IssuesEvent":
           switch (requestData[i]["payload"]["action"]) {
             case "opened":
               li.innerHTML =
