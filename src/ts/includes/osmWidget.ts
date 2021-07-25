@@ -2,6 +2,18 @@ var parseString = require("xml2js").parseString;
 
 export function osmWidget(element: HTMLElement, user: string, amount: Number) {
   element.innerHTML = "";
+
+  const spinner = document.createElement("div");
+  spinner.className = "spinner-border";
+  spinner.setAttribute("role", "status")
+  
+  const spinner_sr = document.createElement("span");
+  spinner_sr.className = "visually-hidden";
+  spinner_sr.innerText = "Loading..."
+
+  spinner.appendChild(spinner_sr);
+  element.appendChild(spinner);
+
   const requestURL =
     "https://api.allorigins.win/get?url=" +
     encodeURIComponent(
@@ -41,6 +53,7 @@ export function osmWidget(element: HTMLElement, user: string, amount: Number) {
           }
           ul.appendChild(li);
         }
+        spinner.style.display = "none";
       }
     });
   };

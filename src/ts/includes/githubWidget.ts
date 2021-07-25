@@ -4,6 +4,18 @@ export function githubWidget(
   amount: Number
 ) {
   element.innerHTML = "";
+
+  const spinner = document.createElement("div");
+  spinner.className = "spinner-border";
+  spinner.setAttribute("role", "status")
+  
+  const spinner_sr = document.createElement("span");
+  spinner_sr.className = "visually-hidden";
+  spinner_sr.innerText = "Loading..."
+
+  spinner.appendChild(spinner_sr);
+  element.appendChild(spinner);
+
   const requestURL =
     "https://api.github.com/users/" +
     encodeURIComponent(user) +
@@ -258,5 +270,6 @@ export function githubWidget(
       }
       ul.appendChild(li);
     }
+    spinner.style.display = "none";
   };
 }
