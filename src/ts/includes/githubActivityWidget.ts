@@ -1,4 +1,4 @@
-export function githubWidget(
+export function githubActivityWidget(
   element: HTMLElement,
   user: string,
   amount: Number

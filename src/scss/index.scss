@@ -1,6 +1,11 @@
 @import "./includes/style.scss";
 @import "./includes/list-group.scss";
 
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
 .tab-nav-link.nav-link.active {
   color: #090c10;
   background-color: white;
@@ -18,4 +23,23 @@
 .spinner-border {
   margin: auto;
   display: flex;
+}
+
+.github-avatar {
+  max-height: 200px;
+}
+
+#githubProfile {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+#githubActivity {
+  ul {
+    max-height: 50vh;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }

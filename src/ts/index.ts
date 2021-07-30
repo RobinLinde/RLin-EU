@@ -2,7 +2,8 @@ import "bootstrap/js/dist/collapse";
 
 import { tvWidget } from "./includes/tvWidget";
 import { osmWidget } from "./includes/osmWidget";
-import { githubWidget } from "./includes/githubWidget";
+import { githubActivityWidget } from "./includes/githubActivityWidget";
+import { githubProfileWidget } from "./includes/githubProfileWidget";
 
 const tvWidgetDiv = document.getElementById("tvWidget");
 const traktUser = "robinlin";
@@ -21,6 +22,9 @@ const osmWidgetDiv = document.getElementById("osmChangesets");
 const osmUser = "Robin van der Linde";
 osmWidget(osmWidgetDiv, osmUser, 20);
 
-const githubWidgetDiv = document.getElementById("githubActivity");
+const githubActivityWidgetDiv = document.getElementById("githubActivity");
 const githubUser = "robinlinde";
-githubWidget(githubWidgetDiv, githubUser, 15);
+githubActivityWidget(githubActivityWidgetDiv, githubUser, 15);
+
+const githubProfileWidgetDiv = document.getElementById("githubProfile");
+githubProfileWidget(githubProfileWidgetDiv, githubUser);
