@@ -32,9 +32,15 @@ body {
 
 main {
   padding-top: 60px;
+  padding-bottom: 2rem;
 }
 
 .card {
   background-color: var(--bg-secondary-color);
   color: var(--text-color);
+}
+
+footer {
+  background-color: var(--bg-secondary-color);
+  color: var(--nav-link);
 }

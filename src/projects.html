@@ -12,7 +12,7 @@
   </head>
   <body class="d-flex flex-column h-100">
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">RLin.eu</a>
           <button
@@ -43,6 +43,18 @@
                 <a class="nav-link" href="./contact.html">Contact</a>
               </li>
             </ul>
+            <form class="d-flex">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  id="themeSwitch"
+                  type="checkbox"
+                />
+                <label class="form-check-label" for="themeSwitch"
+                  ><i class="fa-adjust fas"></i
+                ></label>
+              </div>
+            </form>
           </div>
         </div>
       </nav>
@@ -184,7 +196,7 @@
         </ul>
       </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-dark">
+    <footer class="footer mt-auto py-3">
       <div class="container" id="footer-content">
         <span class="text-muted"
           >&copy; Robin van der Linde, the source code of this site is available

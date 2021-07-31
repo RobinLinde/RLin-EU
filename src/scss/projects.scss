@@ -1,11 +1,12 @@
 @import "./style";
 @import "./list-group";
+@import "./colors";
 
 .github-icon {
-  color: white;
+  color: var(--nav-link);
   text-decoration: none;
   float: right;
 }
 .github-icon:hover {
-  color: gray;
+  color: var(--nav-link-hover);
 }
