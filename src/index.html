@@ -12,7 +12,7 @@
   </head>
   <body class="d-flex flex-column h-100">
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">RLin.eu</a>
           <button
@@ -41,30 +41,65 @@
                 <a class="nav-link" href="./contact.html">Contact</a>
               </li>
             </ul>
+            <form class="d-flex">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  id="themeSwitch"
+                  type="checkbox"
+                />
+                <label class="form-check-label" for="themeSwitch"
+                  ><i class="fa-adjust fas"></i
+                ></label>
+              </div>
+            </form>
           </div>
         </div>
       </nav>
     </header>
 
     <main>
-      <div class="container">
-        <h1>RLin.eu - Home</h1>
-        <p>
-          Hi, I'm Robin, and welcome to my personal website. On this site you
-          can find some information about me, as well as some of my projects.
-          Shown beneath is some of my latest activity.
-        </p>
+      <div class="container" id="mainContent">
+        <h1>RLin.eu - Robin van der Linde</h1>
+        <div class="row">
+          <div class="col-md-auto">
+            <img src="./assets/photo.jpg" class="rounded-circle" id="photo" />
+          </div>
+          <div class="col">
+            <p>
+              Hi! I'm Robin, a 20 year old student and developer, passionate
+              about OpenStreetMap and maps in general. When I'm done studying,
+              I'll usually start mapping on OpenStreetMap, or if I'm feeling
+              overly ambitious I might even do some more programming. Apart from
+              that I also occasionally play a variety of games. Other hobbies
+              include CAD and 3d-printing, electronics, making things in general
+              and cycling.
+            </p>
+            <p>
+              If you want to learn more about me, and what I do, you've come to
+              the right place. On this website you can find some basic
+              information <a href="./aboutme.html">about me</a> and some of my
+              current and past <a href="./projects.html">projects</a>. If still
+              want to know more, feel free to
+              <a href="./contact.html">contact me</a>.
+            </p>
+            <p>
+              Below you can find some of my latest activity on Github and
+              OpenStreetMap.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="container">
         <div class="card-group" id="activity">
-          <div class="card bg-dark text-white" id="gitWidget">
+          <div class="card" id="gitWidget">
             <div class="card-body">
               <h5 class="card-title">Git Activity</h5>
               <div id="githubActivity"></div>
             </div>
           </div>
-          <div class="card bg-dark text-white" id="tvWidget"></div>
-          <div class="card bg-dark text-white">
+          <div class="card" id="tvWidget"></div>
+          <div class="card">
             <div class="card-body">
               <h5 class="card-title">OSM Activity</h5>
               <p class="card-text">

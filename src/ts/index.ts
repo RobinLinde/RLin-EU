@@ -3,6 +3,9 @@ import "bootstrap/js/dist/collapse";
 import { tvWidget } from "./includes/tvWidget";
 import { osmWidget } from "./includes/osmWidget";
 import { githubWidget } from "./includes/githubWidget";
+import initTheme from "./includes/themeSwitch";
+
+initTheme();
 
 const tvWidgetDiv = document.getElementById("tvWidget");
 const traktUser = "robinlin";
