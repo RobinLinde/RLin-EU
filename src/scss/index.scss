@@ -1,21 +1,20 @@
-@import "./includes/style.scss";
-@import "./includes/list-group.scss";
-
-.tab-nav-link.nav-link.active {
-  color: #090c10;
-  background-color: white;
-}
-
-.tab-nav-link.nav-link {
-  color: white;
-  background-color: #090c10;
-}
-
-#tvWidget {
-  display: none;
-}
+@import "./style";
+@import "./list-group";
+@import "./colors";
 
 .spinner-border {
   margin: auto;
   display: flex;
+}
+
+#photo {
+  height: 15rem;
+}
+
+#mainContent {
+  padding-bottom: 2rem;
+}
+
+.gameImg {
+  width: 100%;
 }

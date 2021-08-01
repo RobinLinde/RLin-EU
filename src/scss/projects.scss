@@ -1,17 +1,12 @@
-@import "./includes/style.scss";
-
-@import "./includes/list-group.scss";
-
-$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "./style";
+@import "./list-group";
+@import "./colors";
 
 .github-icon {
-  color: white;
+  color: var(--nav-link);
   text-decoration: none;
   float: right;
 }
 .github-icon:hover {
-  color: gray;
+  color: var(--nav-link-hover);
 }
