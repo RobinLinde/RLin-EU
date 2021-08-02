@@ -17,7 +17,10 @@ export function steamWidget(
   element.appendChild(spinner);
 
   const requestURL =
-    "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" +
+    "https://api.allorigins.win/raw?" +
+    encodeURIComponent(
+      "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key="
+    ) +
     encodeURIComponent(apiKey) +
     "8&steamid=" +
     encodeURIComponent(user) +
