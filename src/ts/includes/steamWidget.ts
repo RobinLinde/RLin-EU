@@ -17,15 +17,15 @@ export function steamWidget(
   element.appendChild(spinner);
 
   const requestURL =
-    "https://api.allorigins.win/raw?" +
+    "https://api.allorigins.win/get?url=" +
     encodeURIComponent(
-      "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key="
-    ) +
-    encodeURIComponent(apiKey) +
-    "8&steamid=" +
-    encodeURIComponent(user) +
-    "&format=json" +
-    encodeURIComponent(user);
+      "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" +
+        apiKey +
+        "8&steamid=" +
+        user +
+        "&format=json" +
+        user
+    );
   const request = new XMLHttpRequest();
 
   request.open("GET", requestURL);
@@ -33,7 +33,9 @@ export function steamWidget(
   request.send();
 
   request.onload = function () {
-    const requestData = request.response["response"]["games"];
+    const requestData = JSON.parse(request.response.contents)["response"][
+      "games"
+    ];
 
     const ul = document.createElement("ul");
     ul.className = "list-group";
