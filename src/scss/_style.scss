@@ -28,6 +28,13 @@ body {
       color: var(--nav-link-active);
     }
   }
+  .navbar-toggler {
+    border-color: var(--toggler-color);
+    color: var(--toggler-color);
+    .navbar-toggler-icon {
+      background-image: var(--nav-img);
+    }
+  }
 }
 
 main {
