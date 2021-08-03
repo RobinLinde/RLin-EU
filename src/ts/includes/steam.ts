@@ -28,8 +28,7 @@ export default class Steam {
           this.apiKey +
           "8&steamid=" +
           this.user +
-          "&format=json" +
-          this.user
+          "&format=json"
       );
     const request = new XMLHttpRequest();
 
@@ -76,8 +75,7 @@ export default class Steam {
           this.apiKey +
           "8&steamids=" +
           this.user +
-          "&format=json" +
-          this.user
+          "&format=json"
       );
     const request = new XMLHttpRequest();
 
@@ -95,7 +93,8 @@ export default class Steam {
         case 0:
           // Offline
           badge.innerText = "Offline";
-          badge.className = "badge rounded-pill bg-light";
+          badge.className = "badge rounded-pill bg-dark";
+          break;
         case 1:
           // Online
           badge.innerText = "Online";
@@ -105,6 +104,7 @@ export default class Steam {
           // Busy
           badge.innerText = "Busy";
           badge.className = "badge rounded-pill bg-danger";
+          break;
         case 3:
           // Away
           badge.innerText = "Away";
