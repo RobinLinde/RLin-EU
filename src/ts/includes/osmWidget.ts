@@ -1,3 +1,4 @@
+//@ts-ignore
 var parseString = require("xml2js").parseString;
 
 export function osmWidget(element: HTMLElement, user: string, amount: Number) {
@@ -5,11 +6,11 @@ export function osmWidget(element: HTMLElement, user: string, amount: Number) {
 
   const spinner = document.createElement("div");
   spinner.className = "spinner-border";
-  spinner.setAttribute("role", "status")
-  
+  spinner.setAttribute("role", "status");
+
   const spinner_sr = document.createElement("span");
   spinner_sr.className = "visually-hidden";
-  spinner_sr.innerText = "Loading..."
+  spinner_sr.innerText = "Loading...";
 
   spinner.appendChild(spinner_sr);
   element.appendChild(spinner);

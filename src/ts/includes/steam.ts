@@ -1,10 +1,16 @@
 export default class Steam {
   user: string;
   apiKey: string;
+  corsEndpoint: string;
 
-  constructor(user: string, apiKey: string) {
+  constructor(user: string, apiKey: string, corsEndpoint?: string) {
     this.user = user;
     this.apiKey = apiKey;
+    if (corsEndpoint.length > 0) {
+      this.corsEndpoint = corsEndpoint;
+    } else {
+      this.corsEndpoint = "https://api.allorigins.win";
+    }
   }
 
   steamWidget(element: HTMLElement) {
@@ -22,7 +28,8 @@ export default class Steam {
     element.appendChild(spinner);
 
     const requestURL =
-      "https://api.allorigins.win/get?url=" +
+      this.corsEndpoint +
+      "/get?url=" +
       encodeURIComponent(
         "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=" +
           this.apiKey +
@@ -69,7 +76,8 @@ export default class Steam {
 
   steamBadge(badge: HTMLSpanElement) {
     const requestURL =
-      "https://cors.rlin.eu/get?url=" +
+      this.corsEndpoint +
+      "/get?url=" +
       encodeURIComponent(
         "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" +
           this.apiKey +
