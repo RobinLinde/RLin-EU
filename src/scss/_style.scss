@@ -11,6 +11,15 @@ body {
   color: var(--text-color);
 }
 
+a {
+  color: var(--nav-link-active);
+
+  &:focus,
+  &:hover {
+    color: var(--nav-link-focus);
+  }
+}
+
 .navbar {
   background-color: var(--bg-secondary-color);
 
