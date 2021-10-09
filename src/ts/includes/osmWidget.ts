@@ -1,7 +1,18 @@
 //@ts-ignore
 var parseString = require("xml2js").parseString;
 
-export function osmWidget(element: HTMLElement, user: string, amount: Number) {
+export function osmWidget(
+  element: HTMLElement,
+  user: string,
+  amount: Number,
+  corsEndpoint?: string
+) {
+  var corsEndpointUsed;
+  if (corsEndpoint) {
+    corsEndpointUsed = corsEndpoint;
+  } else {
+    corsEndpointUsed = "https://api.allorigins.win";
+  }
   element.innerHTML = "";
 
   const spinner = document.createElement("div");
@@ -16,7 +27,8 @@ export function osmWidget(element: HTMLElement, user: string, amount: Number) {
   element.appendChild(spinner);
 
   const requestURL =
-    "https://api.allorigins.win/get?url=" +
+    corsEndpointUsed +
+    "/get?url=" +
     encodeURIComponent(
       "https://openstreetmap.org/api/0.6/changesets?display_name="
     ) +

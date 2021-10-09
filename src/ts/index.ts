@@ -19,7 +19,7 @@ steamApi.steamWidget(steamWidgetDiv);
 
 const osmWidgetDiv = document.getElementById("osmChangesets");
 const osmUser = "Robin van der Linde";
-osmWidget(osmWidgetDiv, osmUser, 5);
+osmWidget(osmWidgetDiv, osmUser, 5, corsEndpoint);
 
 const githubWidgetDiv = document.getElementById("githubActivity");
 const githubUser = "robinlinde";
