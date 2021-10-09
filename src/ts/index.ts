@@ -4,8 +4,10 @@ import Steam from "./includes/steam";
 import { osmWidget } from "./includes/osmWidget";
 import { githubWidget } from "./includes/githubWidget";
 import initTheme from "./includes/themeSwitch";
+import title from "./includes/title";
 
 initTheme();
+title();
 
 const steamWidgetDiv = document.getElementById("steamActivity");
 const steamKey = "25F0C2FF68F43EFEFE4DCAC9C8E4F36";
