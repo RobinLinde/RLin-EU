@@ -51,24 +51,30 @@ export default class Steam {
       const ul = document.createElement("ul");
       ul.className = "list-group";
       element.appendChild(ul);
-      //console.log(request.response["response"]["games"]);
-      for (var i = 0; i < requestData.length; i++) {
+      if (requestData) {
+        for (var i = 0; i < requestData.length; i++) {
+          var li = document.createElement("li");
+          li.className = "list-group-item";
+          ul.appendChild(li);
+          var a = document.createElement("a");
+          a.href =
+            "https://store.steampowered.com/app/" + requestData[i]["appid"];
+          li.appendChild(a);
+          var img = document.createElement("img");
+          img.className = "gameImg";
+          img.src =
+            "https://cdn.akamai.steamstatic.com/steam/apps/" +
+            requestData[i]["appid"] +
+            "/header.jpg";
+          img.alt = requestData[i]["name"];
+          img.title = requestData[i]["name"];
+          a.appendChild(img);
+        }
+      } else {
         var li = document.createElement("li");
         li.className = "list-group-item";
+        li.innerText = "No games played in the last two weeks 😲";
         ul.appendChild(li);
-        var a = document.createElement("a");
-        a.href =
-          "https://store.steampowered.com/app/" + requestData[i]["appid"];
-        li.appendChild(a);
-        var img = document.createElement("img");
-        img.className = "gameImg";
-        img.src =
-          "https://cdn.akamai.steamstatic.com/steam/apps/" +
-          requestData[i]["appid"] +
-          "/header.jpg";
-        img.alt = requestData[i]["name"];
-        img.title = requestData[i]["name"];
-        a.appendChild(img);
       }
       spinner.style.display = "none";
     };
