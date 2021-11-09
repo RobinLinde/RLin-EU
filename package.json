@@ -12,8 +12,8 @@
     "xml2js": "0.4.23"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.0.0",
-    "parcel": "2.0.0"
+    "@parcel/transformer-sass": "2.0.1",
+    "parcel": "2.0.1"
   },
   "author": "Robin van der Linde"
 }
