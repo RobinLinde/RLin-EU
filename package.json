@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.3.2",
-    "parcel": "2.2.1"
+    "parcel": "2.3.2"
   },
   "author": "Robin van der Linde"
 }
