@@ -1,5 +1,7 @@
 {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "scss.lint.unknownAtRules": "ignore"
 }

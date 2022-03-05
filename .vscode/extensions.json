@@ -1,6 +1,8 @@
 {
-    "recommendations": [
-        "davidanson.vscode-markdownlint",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "svelte.svelte-vscode",
+    "davidanson.vscode-markdownlint",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss"
+  ]
 }

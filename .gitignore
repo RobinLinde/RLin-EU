@@ -1,4 +1,8 @@
-node_modules/
-dist/
-.parcel-cache/
-.vercel
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
